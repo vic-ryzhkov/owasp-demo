@@ -7,6 +7,12 @@ app = Flask(__name__)
 def get_css(page_name, style):
     return send_file("pages/" + page_name + "/css/" + style, "text/css")
 
+
+@app.route("/pages/<page_name>/fonts/<font>")
+def get_font(page_name, font):
+    return send_file("pages/" + page_name + "/fonts/" + font, "font/woff2")
+
+
 @app.route("/pages/<page_name>/js/<script>")
 def get_js(page_name, script):
     return send_file("pages/" + page_name + "/js/" + script, "text/javascript")
@@ -38,6 +44,14 @@ def hello_world(name):
 
 </head>
 <body>
+<div class="col-md-4 offset-md-4 mt-5 pt-3">
+  <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search ......" aria-label="Recipient's username">
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fa fa-search"></i></span>
+      </div>
+  </div>
+</div>
 <div class="container mt-5 mb-5">
     <div class="d-flex justify-content-center row">
         <div class="d-flex flex-column col-md-8">
