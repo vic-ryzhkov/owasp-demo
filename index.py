@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, jsonify, request
+from flask import Flask, make_response, send_file, jsonify, request
 import json
 
 app = Flask(__name__)
@@ -85,8 +85,10 @@ def hello_world(name):
 </body>
 </html>
 """
-
-    return page
+    resp = make_response(page)
+    resp.set_cookie('userID', 'cyimH0C9gX8MguUs9MEqcy6g4o5imhgiSSj5tqm9WNuehH5FiB')
+    resp.set_cookie('sessionID', 'DWZmCXyR2lWxaspif6HJjkf37O7mrDlDLxGAKynvvRDOL291rVa9Oe73hLDtZyAjGZ6vXRo5yRfnXjo5')
+    return resp
 
 
 @app.route("/post_comment", methods=["POST"])
