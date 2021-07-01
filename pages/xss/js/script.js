@@ -1,5 +1,10 @@
+
+url = new URL(document.location.href);
+lang = url.searchParams.get("lang");
+document.getElementById("current-lang").innerHTML += lang;
+
+
 async function post_data(url = '', data = {}) {
-  // Default options are marked with *
       const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
@@ -7,9 +12,9 @@ async function post_data(url = '', data = {}) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
+        body: JSON.stringify(data)
       });
-      return await response.json(); // parses JSON response into native JavaScript objects
+      return await response.json();
 }
 
 function add_comment(){
@@ -23,4 +28,13 @@ function add_comment(){
     }
 }
 
-document.getElementById("comment-button").addEventListener("click", add_comment)
+function get_search_results(){
+    search_text = document.getElementById("search-text").value;
+    if(search_text != ""){
+        document.location = "/search?q=" + search_text;
+    }
+}
+
+
+document.getElementById("search-button").addEventListener("click", get_search_results);
+document.getElementById("comment-button").addEventListener("click", add_comment);

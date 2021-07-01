@@ -5,7 +5,7 @@ data = ""
 @app.route("/post_data", methods=["POST"])
 def post_data():
     global data
-    data = data + "\n" + str(request.data)
+    data = data + "<br>" + str(request.data)
     return jsonify(success=True)
 
 @app.route("/", methods=["GET"])
